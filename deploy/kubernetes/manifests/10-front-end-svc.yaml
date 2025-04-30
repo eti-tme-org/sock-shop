@@ -6,6 +6,7 @@ metadata:
   annotations:
         prometheus.io/scrape: 'true'
         service.beta.kubernetes.io/aws-load-balancer-scheme: "internal"
+        service.beta.kubernetes.io/aws-load-balancer-internal: "true"
   labels:
     name: front-end
   namespace: sock-shop
