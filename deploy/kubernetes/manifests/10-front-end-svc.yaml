@@ -5,14 +5,14 @@ metadata:
   name: front-end
   annotations:
         prometheus.io/scrape: 'true'
+        service.beta.kubernetes.io/aws-load-balancer-scheme: "internal"
   labels:
     name: front-end
   namespace: sock-shop
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 80
     targetPort: 8079
-    nodePort: 30001
   selector:
     name: front-end
